@@ -11,4 +11,4 @@ fa-icon: ticket
 ----------
 
 # Looking to reserve the tennis court?
-<p align=center>Please email tennis@suvhoa.com.</p>
+<p align=center>Please [login to the Members page](members/index.html) and request your time.</p>
