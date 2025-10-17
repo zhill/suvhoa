@@ -11,4 +11,4 @@ fa-icon: ticket
 ----------
 
 # Looking to reserve the tennis court?
-<p align=center>Please [login to the Members page](members/index.html) and request your time.</p>
+<p align=center>Please [login to the Members page](https://sysadmininator.com/suvhoa-dev/members/index.html) and request your time.</p>
