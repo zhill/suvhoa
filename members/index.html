@@ -5,115 +5,324 @@ permalink: /members/
 ---
 
 <style>
-/* Keep it minimal and responsive */
-.members-hero { margin: 2rem 0 1rem; text-align: center; }
-.tabs { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1rem; }
-.tabs button { padding: .5rem .8rem; border: 1px solid #ddd; border-radius: .5rem; background: #f9f9f9; cursor: pointer; }
-.tabs button[aria-selected="true"] { background: white; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
-.grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; }
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-.card { background: white; border: 1px solid #eee; border-radius: .75rem; padding: 1rem; }
-.small { color:#666; font-size:.9rem; }
+  .members-page {
+    --page-inline: clamp(1rem, 4vw, 2.75rem);
+    --card-radius: 1rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3rem) var(--page-inline) clamp(3rem, 6vw, 4rem);
+    width: min(1400px, 100%);
+  }
+
+  @media (min-width: 1600px) {
+    .members-page {
+      width: min(1600px, 94vw);
+    }
+  }
+
+  .members-hero {
+    margin-bottom: clamp(1.5rem, 4vw, 2.75rem);
+    text-align: center;
+  }
+
+  .members-hero h1 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(2rem, 3.6vw, 3rem);
+  }
+
+  .members-hero .small {
+    color: #4f4f4f;
+    font-size: 0.95rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto clamp(1.5rem, 4vw, 2.75rem);
+    padding: 0;
+  }
+
+  .tabs button {
+    font-size: 1rem;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    background: #f5f5f5;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .tabs button[aria-selected="true"] {
+    background: #ffffff;
+    color: #1a73e8;
+    border-color: rgba(26, 115, 232, 0.45);
+    box-shadow: 0 12px 28px rgba(26, 115, 232, 0.18);
+  }
+
+  .tabs button:focus-visible {
+    outline: 3px solid rgba(26, 115, 232, 0.35);
+    outline-offset: 2px;
+  }
+
+  .facility-panels {
+    width: 100%;
+  }
+
+  .facility-panel {
+    display: block;
+  }
+
+  .facility-grid {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    align-items: stretch;
+  }
+
+  @media (max-width: 1200px) {
+    .facility-grid {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .facility-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: var(--card-radius);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.85rem, 2vw, 1.5rem);
+    min-height: 0;
+    overflow: hidden;
+    padding: clamp(1rem, 2.4vw, 1.75rem);
+  }
+
+  .card h2 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  }
+
+  .card p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .card ul {
+    margin: 0;
+    padding: 0 0 0 1.2rem;
+    text-align: left;
+  }
+
+  .card--calendar {
+    padding: clamp(0.85rem, 2vw, 1.5rem);
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .card__subtitle {
+    color: #5c6c80;
+    font-size: 0.95rem;
+  }
+
+  .calendar-frame {
+    flex: 1 1 auto;
+    min-height: clamp(420px, 70vh, 860px);
+    width: 100%;
+    border: 0;
+    border-radius: calc(var(--card-radius) - 0.35rem);
+    background: #f8f9fb;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+  }
+
+  @media (max-width: 600px) {
+    .calendar-frame {
+      min-height: clamp(360px, 68vh, 640px);
+    }
+  }
+
+  .card--booking {
+    gap: clamp(1rem, 2.2vw, 1.75rem);
+  }
+
+  @media (min-width: 900px) {
+    .card--booking {
+      position: sticky;
+      top: clamp(1rem, 4vw, 2.5rem);
+      align-self: start;
+    }
+  }
+
+  .booking-button {
+    display: flex;
+    width: 100%;
+  }
+
+  .booking-button button {
+    width: 100%;
+    min-height: 3.25rem;
+    font-size: 1.05rem;
+    border-radius: 999px;
+  }
+
+  .rules-list {
+    color: #4f4f4f;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 780px) {
+    .members-page {
+      width: 100%;
+      padding-inline: clamp(0.75rem, 6vw, 1.5rem);
+    }
+
+    .members-hero {
+      text-align: left;
+    }
+
+    .tabs {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-inline: var(--page-inline);
+      margin-inline: calc(var(--page-inline) * -1);
+      padding-bottom: 0.5rem;
+    }
+  }
 </style>
 
-<div class="members-hero">
-  <h1>Amenities Booking</h1>
-  <div class="small">Times shown in Pacific. Last updated <span id="ts"></span>.</div>
+<div class="members-page">
+  <div class="members-hero">
+    <h1>Amenities Booking</h1>
+    <div class="small">Times shown in Pacific. Last updated <span id="ts"></span>.</div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Facilities">
+    <button role="tab" id="tab-tennis" aria-controls="panel-tennis" aria-selected="true" tabindex="0" data-facility="tennis">Tennis Court</button>
+  </div>
+
+  <div id="facility-panels" class="facility-panels">
+    <section role="tabpanel" id="panel-tennis" class="facility-panel" aria-labelledby="tab-tennis">
+      <div class="facility-grid">
+        <div class="card card--calendar">
+          <div class="card__header">
+            <h2>Tennis Court Availability</h2>
+            <p class="card__subtitle">Review open time slots before confirming your reservation.</p>
+          </div>
+          <iframe
+            class="calendar-frame"
+            title="Tennis court weekly calendar"
+            loading="lazy"
+            allowtransparency="true"
+            src="https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showCalendars=0&mode=WEEK&src=YW5kcmV3QGNhcHRpdmkuaW5mbw&color=%23039be5">
+          </iframe>
+        </div>
+
+        <div class="card card--booking">
+          <h2>Book the Tennis Court</h2>
+          <p>Reserve a one-hour slot for your household once you have confirmed availability.</p>
+          <div id="tennis-book-btn" class="booking-button"></div>
+          <noscript>
+            <p><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KrOERvjUeb7LGjcHpfMHEgNjfyrbjIrFN6eZ_tttgtb8VZtpC9YWpxsxQFj6LYPPaZ5COLMuN" target="_blank" rel="noopener">Open booking page</a></p>
+          </noscript>
+          <ul class="rules-list">
+            <li>One hour max per day per household.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
-<div class="tabs" role="tablist" aria-label="Facilities">
-  <button role="tab" aria-selected="true" data-facility="tennis">Tennis Court</button>
-</div>
-
-<div id="facility-panels">
-
-  <!-- Tennis (only remaining facility) -->
-  <section role="tabpanel" id="panel-tennis" class="grid">
-    <div class="card">
-      <iframe style="border:0" width="100%" height="600" frameborder="0" scrolling="no"
-        src="https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showCalendars=0&mode=WEEK&src=YW5kcmV3QGNhcHRpdmkuaW5mbw&color=%23039be5">
-      </iframe>
-    </div>
-    <div class="card">
-      <h2>Book the Tennis Court</h2>
-      <div id="tennis-book-btn"></div>
-      <noscript><p><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KrOERvjUeb7LGjcHpfMHEgNjfyrbjIrFN6eZ_tttgtb8VZtpC9YWpxsxQFj6LYPPaZ5COLMuN"
-        target="_blank" rel="noopener">Open booking page</a></p></noscript>
-      <ul class="small"><li>1 hour max per day per household.</li></ul>
-    </div>
-  </section>
-
-</div>
-
-<!-- Official Google “Appointment schedules” embed loader -->
 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 <script>
-  // tabs
-  const tabs = document.querySelectorAll('.tabs button');
-  const panels = {
-    tennis: document.getElementById('panel-tennis')
-  };
-  tabs.forEach(btn => btn.addEventListener('click', () => {
-    tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
-    Object.values(panels).forEach(p => p.hidden = true);
-    btn.setAttribute('aria-selected', 'true');
-    panels[btn.dataset.facility].hidden = false;
-  }));
-  document.getElementById('ts').textContent = new Date().toLocaleString();
+  document.addEventListener('DOMContentLoaded', function () {
+    const timestamp = document.getElementById('ts');
+    if (timestamp) {
+      timestamp.textContent = new Date().toLocaleString();
+    }
 
-  // load Google booking popup button (tennis only)
-  window.addEventListener('load', function () {
-    if (!window.calendar || !calendar.schedulingButton) return;
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KrOERvjUeb7LGjcHpfMHEgNjfyrbjIrFN6eZ_tttgtb8VZtpC9YWpxsxQFj6LYPPaZ5COLMuN',
-      color: '#1a73e8',
-      label: 'Book tennis',
-      target: document.getElementById('tennis-book-btn')
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+
+    const activateTab = (newTab, { focus = true } = {}) => {
+      tabs.forEach((tab) => {
+        const isSelected = tab === newTab;
+        tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+        const panelId = tab.getAttribute('aria-controls');
+        if (panelId) {
+          const panel = document.getElementById(panelId);
+          if (panel) {
+            panel.hidden = !isSelected;
+          }
+        }
+      });
+
+      if (focus) {
+        newTab.focus();
+      }
+    };
+
+    const focusAdjacentTab = (currentIndex, offset) => {
+      const total = tabs.length;
+      if (!total) return;
+      const nextIndex = (currentIndex + offset + total) % total;
+      activateTab(tabs[nextIndex]);
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab, { focus: false }));
+      tab.addEventListener('keydown', (event) => {
+        switch (event.key) {
+          case 'ArrowLeft':
+            event.preventDefault();
+            focusAdjacentTab(index, -1);
+            break;
+          case 'ArrowRight':
+            event.preventDefault();
+            focusAdjacentTab(index, 1);
+            break;
+          case 'Home':
+            event.preventDefault();
+            activateTab(tabs[0]);
+            break;
+          case 'End':
+            event.preventDefault();
+            activateTab(tabs[tabs.length - 1]);
+            break;
+          default:
+            break;
+        }
+      });
     });
+
+    const initiallySelected = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+    if (initiallySelected) {
+      activateTab(initiallySelected, { focus: false });
+    }
   });
-</script>
-</div>
 
-<!-- Official Google “Appointment schedules” embed loader -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-  // tabs
-  const tabs = document.querySelectorAll('.tabs button');
-  const panels = {
-    tennis: document.getElementById('panel-tennis'),
-    pool: document.getElementById('panel-pool'),
-    clubhouse: document.getElementById('panel-clubhouse')
-  };
-  tabs.forEach(btn => btn.addEventListener('click', () => {
-    tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
-    Object.values(panels).forEach(p => p.hidden = true);
-    btn.setAttribute('aria-selected', 'true');
-    panels[btn.dataset.facility].hidden = false;
-  }));
-  document.getElementById('ts').textContent = new Date().toLocaleString();
-
-  // load Google booking popup buttons (works when the script finishes loading)
   window.addEventListener('load', function () {
     if (!window.calendar || !calendar.schedulingButton) return;
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/REPLACE_POOL_BOOKING_URL',
-      color: '#1a73e8',
-      label: 'Book pool',
-      target: document.getElementById('pool-book-btn')
-    });
     calendar.schedulingButton.load({
       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KrOERvjUeb7LGjcHpfMHEgNjfyrbjIrFN6eZ_tttgtb8VZtpC9YWpxsxQFj6LYPPaZ5COLMuN',
       color: '#1a73e8',
       label: 'Book tennis',
       target: document.getElementById('tennis-book-btn')
-    });
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/REPLACE_CLUBHOUSE_BOOKING_URL',
-      color: '#1a73e8',
-      label: 'Book clubhouse',
-      target: document.getElementById('clubhouse-book-btn')
     });
   });
 </script>
