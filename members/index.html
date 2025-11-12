@@ -11,8 +11,7 @@ permalink: /members/
     --card-radius: 1rem;
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 3rem) var(--page-inline) clamp(3rem, 6vw, 4rem);
-    width: 100%;
-    max-width: 1400px;
+    width: min(1400px, 100%);
   }
 
   .members-page *,
@@ -23,7 +22,7 @@ permalink: /members/
 
   @media (min-width: 1600px) {
     .members-page {
-      max-width: min(1600px, 94vw);
+      width: min(1600px, 94vw);
     }
   }
 
