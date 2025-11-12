@@ -5,6 +5,19 @@ permalink: /members/
 ---
 
 <style>
+  /* Override the Cayman theme wrapper so the page stays centered */
+  .container-lg {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container-lg.px-3 {
+    padding-left: clamp(1rem, 4vw, 2.5rem);
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+  }
+
   .members-page {
     box-sizing: border-box;
     --page-inline: clamp(1rem, 4vw, 2.75rem);
