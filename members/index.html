@@ -220,6 +220,20 @@ permalink: /members/
       margin-inline: calc(var(--page-inline) * -1);
       padding-bottom: 0.5rem;
     }
+  
+    /* keep the wrapper and inner page in sync on very wide screens */
+  @media (min-width: 1600px) {
+    .container-lg,
+    .members-page {
+    max-width: 1400px;   /* pick the width that matches your design */
+    }
+
+  /* if the grid cards still over-expand, tighten the columns */
+    .facility-grid {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+  }
+
   }
 </style>
 
