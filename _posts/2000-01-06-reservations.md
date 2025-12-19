@@ -11,4 +11,4 @@ fa-icon: ticket
 ----------
 
 # Looking to reserve the tennis court?
-<p align=center>Please <a href="https://sysadmininator.com/suvhoa-dev/members/index.html" target="_blank" rel="noopener noreferrer">login to the Members page</a> and request your time.</p>
+<p align=center>Please email tennis@suvhoa.com.</p>
