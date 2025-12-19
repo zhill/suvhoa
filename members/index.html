@@ -25,6 +25,8 @@ permalink: /members/
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 3rem) var(--page-inline) clamp(3rem, 6vw, 4rem);
     width: min(1400px, 100%);
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .members-page *,
@@ -98,6 +100,9 @@ permalink: /members/
     gap: clamp(1.25rem, 2.5vw, 2rem);
     grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
     align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   @media (max-width: 1200px) {
@@ -121,6 +126,8 @@ permalink: /members/
     flex-direction: column;
     gap: clamp(0.85rem, 2vw, 1.5rem);
     min-height: 0;
+    min-width: 0;
+    max-width: 100%;
     overflow: hidden;
     padding: clamp(1rem, 2.4vw, 1.75rem);
   }
@@ -145,6 +152,8 @@ permalink: /members/
 
   .card--calendar {
     padding: clamp(0.85rem, 2vw, 1.5rem);
+    min-width: 0;
+    overflow: hidden;
   }
 
   .card__header {
@@ -158,19 +167,34 @@ permalink: /members/
     font-size: 0.95rem;
   }
 
-  .calendar-frame {
+  .calendar-wrapper {
     flex: 1 1 auto;
-    min-height: clamp(420px, 70vh, 860px);
     width: 100%;
-    border: 0;
+    min-width: 0;
+    min-height: clamp(420px, 70vh, 860px);
+    position: relative;
+    overflow: hidden;
     border-radius: calc(var(--card-radius) - 0.35rem);
     background: #f8f9fb;
     box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
   }
 
+  .calendar-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   @media (max-width: 600px) {
-    .calendar-frame {
+    .calendar-wrapper {
       min-height: clamp(360px, 68vh, 640px);
+    }
+
+    .calendar-frame {
+      min-height: 100%;
     }
   }
 
@@ -255,13 +279,15 @@ permalink: /members/
             <h2>Tennis Court Availability</h2>
             <p class="card__subtitle">Review open time slots before confirming your reservation.</p>
           </div>
-          <iframe
-            class="calendar-frame"
-            title="Tennis court weekly calendar"
-            loading="lazy"
-            allowtransparency="true"
-            src="https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showCalendars=0&mode=WEEK&src=YW5kcmV3QGNhcHRpdmkuaW5mbw&color=%23039be5">
-          </iframe>
+          <div class="calendar-wrapper">
+            <iframe
+              class="calendar-frame"
+              title="Tennis court weekly calendar"
+              loading="lazy"
+              allowtransparency="true"
+              src="https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showCalendars=0&mode=WEEK&src=YW5kcmV3QGNhcHRpdmkuaW5mbw&color=%23039be5">
+            </iframe>
+          </div>
         </div>
 
         <div class="card card--booking">
