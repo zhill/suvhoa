@@ -15,3 +15,8 @@
 
 # Playground, Basketball Court and Volleyball Court
 ### These three areas are not gated and available to the neighborhood. 
+
+
+
+--------
+Second University Village Homeowners Association © 2026 All Rights Reserved
