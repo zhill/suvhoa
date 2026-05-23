@@ -11,16 +11,17 @@ color: black
 
 
 ## **General Information**
-- #### The clubhouse may be reserved by homeowners or tenants.
-- #### General reservation hours are 9:00 a.m. – 10:00 p.m.
-- #### Event guests may enjoy the swimming pools, but not exclusively. 
+
+#### The clubhouse may be reserved by homeowners or tenants.
+#### General reservation hours are 9:00 a.m. – 10:00 p.m.
+#### Event guests may enjoy the swimming pools, but not exclusively. 
 
 <img src="./img/InsideClubhouse.jpg" alt="insideclubhouse" width="1000">
 
 ## **Requirements**
-- #### Non-Refundable $50.00 rental fee.
-- #### Refundable $500.00 security deposit.
-- #### Homeowner signs the rental agreement. 
+#### Non-Refundable $50.00 rental fee.
+#### Refundable $500.00 security deposit.
+#### Homeowner signs the rental agreement. 
 
 ##### Please fill out a <a href="https://forms.gle/jXot6iAB6ycBFQQa6">reservation request form</a> to get started. One of our board members will reach out to you with more information including the rental agreement. 
 
