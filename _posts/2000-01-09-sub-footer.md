@@ -1,2 +1,0 @@
-
-Second University Village Homeowners Association © 2026 All Rights Reserved 
