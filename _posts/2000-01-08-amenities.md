@@ -1,6 +1,6 @@
 # **SUVHOA Facilities**
 
-<img src="./img/Pool Zoom In.jpg" alt="pool" width="1400">
+<img src="./img/Pool Zoom In.jpg" alt="pool" width="1000">
 
 ### Homeowners and tenants are welcome to use the clubhouse, pool, tennis court, basketball court and playground. Your key card will open the gates for both the swimming pool area and tennis courts. 
 
