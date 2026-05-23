@@ -15,6 +15,7 @@ color: black
 - #### General reservation hours are 9:00 a.m. – 10:00 p.m.
 - #### Event guests may enjoy the swimming pools, but not exclusively. 
 
+<img src="./img/InsideClubhouse.jpg" alt="insideclubhouse" width="1000">
 
 ## **Requirements**
 - #### Non-Refundable $50.00 rental fee.
