@@ -5,7 +5,7 @@ color: black
 ---
 # **Event Space and Reservations**
 
-<img src="./img/SUVHOA Clubhouse.jpg" alt="clubhouse" width="1000">
+<img src="./SUVHOA Clubhouse.jpg" alt="clubhouse" width="1000">
 
 # Host your next event at the Clubhouse!
 
@@ -16,7 +16,7 @@ color: black
 #### General reservation hours are 9:00 a.m. – 10:00 p.m.
 #### Event guests may enjoy the swimming pools, but not exclusively. 
 
-<img src="./img/InsideClubhouse.jpg" alt="insideclubhouse" width="1000">
+<img src="./InsideClubhouse.jpg" alt="insideclubhouse" width="1000">
 
 ## **Requirements**
 #### Non-Refundable $50.00 rental fee.
