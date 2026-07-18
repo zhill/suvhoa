@@ -1,3 +1,13 @@
+## :warning: This site is no longer active
+
+The SUVHOA website has moved off GitHub Pages. The live, current site is now:
+
+### :link: [suvhoa.square.site](https://suvhoa.square.site)
+
+This repository is **kept active intentionally** — it still hosts the [wiki](https://github.com/suvhoa/suvhoa/wiki) and historical project/service documentation below — but the Jekyll site in these files is no longer published or updated.
+
+---
+
 ## Second University Village Homeowners Association Website and Services Documentation
 
 
