@@ -17,6 +17,11 @@
 <body>
   <div id="main">
 
+    <div style="background:#111111; color:#f8f8f8; text-align:center; padding:1em; font-size:1.1em; font-weight:bold;">
+      This site is no longer active.
+      Visit our current site at <a style="color:#fab125;" href="https://suvhoa.square.site">suvhoa.square.site</a>.
+    </div>
+
     <nav><ul>
       {% for node in site.posts reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
